@@ -4,7 +4,7 @@ title:{良奈的博客}
     <head>
         <meta charset="UTF-8">
         <title>
-            李宇豪的博客
+            良奈的博客
         </title>
     </head>
     <body>
