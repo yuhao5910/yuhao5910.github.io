@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="lingo不区分大小写lingo原理是一个一个方程结尾加分号默认所有变量非负 x^2+y^2+2*x&#x3D;103;2*x+y&#x3D;12;y&gt;5; 线性规划只能含有一个目标函数求目标函数的最大值或最小值分别用max&#x3D;…或min&#x3D;…写注释后面要有分号不区分线性规划和非线性规划建议非线性规划转变成线性规划 max&#x3D;200x1+300x2;x1&lt;&#x3D;100;x2&lt;&#x3D;120;x1+2*x2&lt;&#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lingo">
+<meta property="og:url" content="http://example.com/2021/03/31/Lingo/index.html">
+<meta property="og:site_name" content="良奈的博客">
+<meta property="og:description" content="lingo不区分大小写lingo原理是一个一个方程结尾加分号默认所有变量非负 x^2+y^2+2*x&#x3D;103;2*x+y&#x3D;12;y&gt;5; 线性规划只能含有一个目标函数求目标函数的最大值或最小值分别用max&#x3D;…或min&#x3D;…写注释后面要有分号不区分线性规划和非线性规划建议非线性规划转变成线性规划 max&#x3D;200x1+300x2;x1&lt;&#x3D;100;x2&lt;&#x3D;120;x1+2*x2&lt;&#x3D;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="c:/Users/yuhao5910/AppData/Roaming/Typora/typora-user-images/image-20210331125955861.png">
+<meta property="article:published_time" content="2021-03-31T04:47:37.000Z">
+<meta property="article:modified_time" content="2021-03-31T13:42:06.878Z">
+<meta property="article:author" content="良奈">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/yuhao5910/AppData/Roaming/Typora/typora-user-images/image-20210331125955861.png">
+
+<link rel="canonical" href="http://example.com/2021/03/31/Lingo/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Lingo | 良奈的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">良奈的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/31/Lingo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/%5Cimages%5Cgirl_0.jpg">
+      <meta itemprop="name" content="良奈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良奈的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Lingo
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-03-31 12:47:37 / 修改时间：21:42:06" itemprop="dateCreated datePublished" datetime="2021-03-31T12:47:37+08:00">2021-03-31</time>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="lingo不区分大小写"><a href="#lingo不区分大小写" class="headerlink" title="lingo不区分大小写"></a>lingo不区分大小写</h3><h3 id="lingo原理是一个一个方程"><a href="#lingo原理是一个一个方程" class="headerlink" title="lingo原理是一个一个方程"></a>lingo原理是一个一个方程</h3><h3 id="结尾加分号"><a href="#结尾加分号" class="headerlink" title="结尾加分号"></a>结尾加分号</h3><h3 id="默认所有变量非负"><a href="#默认所有变量非负" class="headerlink" title="默认所有变量非负"></a>默认所有变量非负</h3><blockquote>
+<h5 id="x-2-y-2-2-x-103"><a href="#x-2-y-2-2-x-103" class="headerlink" title="x^2+y^2+2*x=103;"></a>x^2+y^2+2*x=103;</h5><h5 id="2-x-y-12"><a href="#2-x-y-12" class="headerlink" title="2*x+y=12;"></a>2*x+y=12;</h5><h5 id="y-gt-5"><a href="#y-gt-5" class="headerlink" title="y&gt;5;"></a>y&gt;5;</h5></blockquote>
+<h3 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h3><h5 id="只能含有一个目标函数"><a href="#只能含有一个目标函数" class="headerlink" title="只能含有一个目标函数"></a>只能含有一个目标函数</h5><h5 id="求目标函数的最大值或最小值分别用max-…或min-…"><a href="#求目标函数的最大值或最小值分别用max-…或min-…" class="headerlink" title="求目标函数的最大值或最小值分别用max=…或min=…"></a>求目标函数的最大值或最小值分别用max=…或min=…</h5><h5 id="写注释后面要有分号"><a href="#写注释后面要有分号" class="headerlink" title="写注释后面要有分号"></a>写注释后面要有分号</h5><h5 id="不区分线性规划和非线性规划"><a href="#不区分线性规划和非线性规划" class="headerlink" title="不区分线性规划和非线性规划"></a>不区分线性规划和非线性规划</h5><h5 id="建议非线性规划转变成线性规划"><a href="#建议非线性规划转变成线性规划" class="headerlink" title="建议非线性规划转变成线性规划"></a>建议非线性规划转变成线性规划</h5><blockquote>
+<h5 id="max-200x1-300x2"><a href="#max-200x1-300x2" class="headerlink" title="max=200x1+300x2;"></a>max=200<em>x1+300</em>x2;</h5><h5 id="x1-lt-100"><a href="#x1-lt-100" class="headerlink" title="x1&lt;=100;"></a>x1&lt;=100;</h5><h5 id="x2-lt-120"><a href="#x2-lt-120" class="headerlink" title="x2&lt;=120;"></a>x2&lt;=120;</h5><h5 id="x1-2-x2-lt-160"><a href="#x1-2-x2-lt-160" class="headerlink" title="x1+2*x2&lt;=160;"></a>x1+2*x2&lt;=160;</h5></blockquote>
+<p><img src="C:\Users\yuhao5910\AppData\Roaming\Typora\typora-user-images\image-20210331125955861.png" alt="image-20210331125955861"></p>
+<h5 id="关注objective-value"><a href="#关注objective-value" class="headerlink" title="关注objective value"></a>关注objective value</h5><h3 id="集合矩阵"><a href="#集合矩阵" class="headerlink" title="集合矩阵"></a>集合矩阵</h3><h4 id="暴力枚举很繁琐，所以我们使用集合"><a href="#暴力枚举很繁琐，所以我们使用集合" class="headerlink" title="暴力枚举很繁琐，所以我们使用集合"></a>暴力枚举很繁琐，所以我们使用集合</h4><blockquote>
+<h5 id="sets"><a href="#sets" class="headerlink" title="sets:"></a>sets:</h5><h5 id="factory-1-6-a-b"><a href="#factory-1-6-a-b" class="headerlink" title="factory /1..6/ : a,b;"></a>factory /1..6/ : a,b;</h5><h5 id="plant-1-3-x-y"><a href="#plant-1-3-x-y" class="headerlink" title="plant /1..3/ : x,y;"></a>plant /1..3/ : x,y;</h5><h5 id="endsets"><a href="#endsets" class="headerlink" title="endsets"></a>endsets</h5></blockquote>
+<h5 id="factory-和-plant-都是制造矩阵的工厂，但是它们是两家不同的工厂"><a href="#factory-和-plant-都是制造矩阵的工厂，但是它们是两家不同的工厂" class="headerlink" title="factory 和 plant 都是制造矩阵的工厂，但是它们是两家不同的工厂"></a>factory 和 plant 都是制造矩阵的工厂，但是它们是两家不同的工厂</h5><h5 id="矩阵工厂的名字是随便取的"><a href="#矩阵工厂的名字是随便取的" class="headerlink" title="矩阵工厂的名字是随便取的"></a>矩阵工厂的名字是随便取的</h5><h5 id="用sets-ensets"><a href="#用sets-ensets" class="headerlink" title="用sets:ensets"></a>用sets:ensets</h5><h5 id="表示生产的起止"><a href="#表示生产的起止" class="headerlink" title="表示生产的起止"></a>表示生产的起止</h5><h4 id="可以给矩阵赋初值"><a href="#可以给矩阵赋初值" class="headerlink" title="可以给矩阵赋初值"></a>可以给矩阵赋初值</h4><blockquote>
+<h5 id="data"><a href="#data" class="headerlink" title="data:"></a>data:</h5><h5 id="a-1-2-3-4-5-6"><a href="#a-1-2-3-4-5-6" class="headerlink" title="a=1,2,3,4,5,6;"></a>a=1,2,3,4,5,6;</h5><h5 id="b-11-22-33-44-55-66"><a href="#b-11-22-33-44-55-66" class="headerlink" title="b=11,22,33,44,55,66;"></a>b=11,22,33,44,55,66;</h5><h5 id="enddata"><a href="#enddata" class="headerlink" title="enddata"></a>enddata</h5></blockquote>
+<h5 id="data-enddata表示矩阵赋值的起止"><a href="#data-enddata表示矩阵赋值的起止" class="headerlink" title="data:enddata表示矩阵赋值的起止"></a>data:enddata表示矩阵赋值的起止</h5><h4 id="二维矩阵"><a href="#二维矩阵" class="headerlink" title="二维矩阵"></a>二维矩阵</h4><blockquote>
+<h5 id="Cooperation-gc-gc-c"><a href="#Cooperation-gc-gc-c" class="headerlink" title="Cooperation(gc,gc) : c;"></a>Cooperation(gc,gc) : c;</h5></blockquote>
+<h5 id="Cooperation是两个小工厂合并而成"><a href="#Cooperation是两个小工厂合并而成" class="headerlink" title="Cooperation是两个小工厂合并而成"></a>Cooperation是两个小工厂合并而成</h5><h4 id="二维矩阵赋值"><a href="#二维矩阵赋值" class="headerlink" title="二维矩阵赋值"></a>二维矩阵赋值</h4><blockquote>
+<h5 id="c-1-2-3-4-5"><a href="#c-1-2-3-4-5" class="headerlink" title="c=1,2,3,4,5"></a>c=1,2,3,4,5</h5><h5 id="6-7-8-9-10"><a href="#6-7-8-9-10" class="headerlink" title="6,7,8,9,10"></a>6,7,8,9,10</h5><h5 id="11-12-13-14-15"><a href="#11-12-13-14-15" class="headerlink" title="11,12,13,14,15"></a>11,12,13,14,15</h5><h5 id="16-17-18-19-20"><a href="#16-17-18-19-20" class="headerlink" title="16,17,18,19,20"></a>16,17,18,19,20</h5><h5 id="21-22-23-24-25"><a href="#21-22-23-24-25" class="headerlink" title="21,22,23,24,25;"></a>21,22,23,24,25;</h5></blockquote>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><h5 id="for循环要括起整个循环"><a href="#for循环要括起整个循环" class="headerlink" title="for循环要括起整个循环"></a>for循环要括起整个循环</h5><h5 id="for循环内部，要先写工厂，以告诉循环几次"><a href="#for循环内部，要先写工厂，以告诉循环几次" class="headerlink" title="for循环内部，要先写工厂，以告诉循环几次"></a>for循环内部，要先写工厂，以告诉循环几次</h5><h5 id="一维矩阵-i-可省略"><a href="#一维矩阵-i-可省略" class="headerlink" title="一维矩阵 $i$ 可省略"></a>一维矩阵 $i$ 可省略</h5><blockquote>
+<h5 id="sets-1"><a href="#sets-1" class="headerlink" title="sets:"></a>sets:</h5><h5 id="gc-1-5-a-x"><a href="#gc-1-5-a-x" class="headerlink" title="gc /1..5/ :a,x;"></a>gc /1..5/ :a,x;</h5><h5 id="endsets-1"><a href="#endsets-1" class="headerlink" title="endsets"></a>endsets</h5><h5 id="data-1"><a href="#data-1" class="headerlink" title="data:"></a>data:</h5><h5 id="a-1-2-3-4-5"><a href="#a-1-2-3-4-5" class="headerlink" title="a=1,2,3,4,5;"></a>a=1,2,3,4,5;</h5><h5 id="enddata-1"><a href="#enddata-1" class="headerlink" title="enddata"></a>enddata</h5><h5 id="max-s"><a href="#max-s" class="headerlink" title="max =s;"></a>max =s;</h5><h5 id="for-gc-i-s-a-i-x-i"><a href="#for-gc-i-s-a-i-x-i" class="headerlink" title="@for(gc(i):s=a(i)*x(i));"></a>@for(gc(i):s=a(i)*x(i));</h5></blockquote>
+<h3 id="sum求和"><a href="#sum求和" class="headerlink" title="sum求和"></a>sum求和</h3><h5 id="sum求和不要括起所有条件-中间加上sum"><a href="#sum求和不要括起所有条件-中间加上sum" class="headerlink" title="sum求和不要括起所有条件,中间加上sum"></a>sum求和不要括起所有条件,中间加上sum</h5><blockquote>
+<h5 id="sum-gc-i-x-i-5000"><a href="#sum-gc-i-x-i-5000" class="headerlink" title="@sum(gc(i):x(i))=5000;"></a>@sum(gc(i):x(i))=5000;</h5></blockquote>
+<h3 id="整个程序套上model-end"><a href="#整个程序套上model-end" class="headerlink" title="整个程序套上model:end"></a>整个程序套上model:end</h3>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/03/29/Cauchy%E6%94%B6%E6%95%9B%E5%8E%9F%E7%90%86/" rel="prev" title="Cauchy收敛原理">
+      <i class="fa fa-chevron-left"></i> Cauchy收敛原理
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#lingo%E4%B8%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99"><span class="nav-number">1.</span> <span class="nav-text">lingo不区分大小写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lingo%E5%8E%9F%E7%90%86%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%80%E4%B8%AA%E6%96%B9%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">lingo原理是一个一个方程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E5%B0%BE%E5%8A%A0%E5%88%86%E5%8F%B7"><span class="nav-number">3.</span> <span class="nav-text">结尾加分号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%BB%98%E8%AE%A4%E6%89%80%E6%9C%89%E5%8F%98%E9%87%8F%E9%9D%9E%E8%B4%9F"><span class="nav-number">4.</span> <span class="nav-text">默认所有变量非负</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#x-2-y-2-2-x-103"><span class="nav-number">4.0.1.</span> <span class="nav-text">x^2+y^2+2*x&#x3D;103;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-x-y-12"><span class="nav-number">4.0.2.</span> <span class="nav-text">2*x+y&#x3D;12;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#y-gt-5"><span class="nav-number">4.0.3.</span> <span class="nav-text">y&gt;5;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92"><span class="nav-number">5.</span> <span class="nav-text">线性规划</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%8F%AA%E8%83%BD%E5%90%AB%E6%9C%89%E4%B8%80%E4%B8%AA%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="nav-number">5.0.1.</span> <span class="nav-text">只能含有一个目标函数</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B1%82%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0%E7%9A%84%E6%9C%80%E5%A4%A7%E5%80%BC%E6%88%96%E6%9C%80%E5%B0%8F%E5%80%BC%E5%88%86%E5%88%AB%E7%94%A8max-%E2%80%A6%E6%88%96min-%E2%80%A6"><span class="nav-number">5.0.2.</span> <span class="nav-text">求目标函数的最大值或最小值分别用max&#x3D;…或min&#x3D;…</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%86%99%E6%B3%A8%E9%87%8A%E5%90%8E%E9%9D%A2%E8%A6%81%E6%9C%89%E5%88%86%E5%8F%B7"><span class="nav-number">5.0.3.</span> <span class="nav-text">写注释后面要有分号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%8D%E5%8C%BA%E5%88%86%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E5%92%8C%E9%9D%9E%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92"><span class="nav-number">5.0.4.</span> <span class="nav-text">不区分线性规划和非线性规划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%BB%BA%E8%AE%AE%E9%9D%9E%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92%E8%BD%AC%E5%8F%98%E6%88%90%E7%BA%BF%E6%80%A7%E8%A7%84%E5%88%92"><span class="nav-number">5.0.5.</span> <span class="nav-text">建议非线性规划转变成线性规划</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#max-200x1-300x2"><span class="nav-number">5.0.6.</span> <span class="nav-text">max&#x3D;200x1+300x2;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#x1-lt-100"><span class="nav-number">5.0.7.</span> <span class="nav-text">x1&lt;&#x3D;100;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#x2-lt-120"><span class="nav-number">5.0.8.</span> <span class="nav-text">x2&lt;&#x3D;120;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#x1-2-x2-lt-160"><span class="nav-number">5.0.9.</span> <span class="nav-text">x1+2*x2&lt;&#x3D;160;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%85%B3%E6%B3%A8objective-value"><span class="nav-number">5.0.10.</span> <span class="nav-text">关注objective value</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9F%A9%E9%98%B5"><span class="nav-number">6.</span> <span class="nav-text">集合矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9A%B4%E5%8A%9B%E6%9E%9A%E4%B8%BE%E5%BE%88%E7%B9%81%E7%90%90%EF%BC%8C%E6%89%80%E4%BB%A5%E6%88%91%E4%BB%AC%E4%BD%BF%E7%94%A8%E9%9B%86%E5%90%88"><span class="nav-number">6.1.</span> <span class="nav-text">暴力枚举很繁琐，所以我们使用集合</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#sets"><span class="nav-number">6.1.1.</span> <span class="nav-text">sets:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#factory-1-6-a-b"><span class="nav-number">6.1.2.</span> <span class="nav-text">factory &#x2F;1..6&#x2F; : a,b;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#plant-1-3-x-y"><span class="nav-number">6.1.3.</span> <span class="nav-text">plant &#x2F;1..3&#x2F; : x,y;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#endsets"><span class="nav-number">6.1.4.</span> <span class="nav-text">endsets</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#factory-%E5%92%8C-plant-%E9%83%BD%E6%98%AF%E5%88%B6%E9%80%A0%E7%9F%A9%E9%98%B5%E7%9A%84%E5%B7%A5%E5%8E%82%EF%BC%8C%E4%BD%86%E6%98%AF%E5%AE%83%E4%BB%AC%E6%98%AF%E4%B8%A4%E5%AE%B6%E4%B8%8D%E5%90%8C%E7%9A%84%E5%B7%A5%E5%8E%82"><span class="nav-number">6.1.5.</span> <span class="nav-text">factory 和 plant 都是制造矩阵的工厂，但是它们是两家不同的工厂</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%B7%A5%E5%8E%82%E7%9A%84%E5%90%8D%E5%AD%97%E6%98%AF%E9%9A%8F%E4%BE%BF%E5%8F%96%E7%9A%84"><span class="nav-number">6.1.6.</span> <span class="nav-text">矩阵工厂的名字是随便取的</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8sets-ensets"><span class="nav-number">6.1.7.</span> <span class="nav-text">用sets:ensets</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%A1%A8%E7%A4%BA%E7%94%9F%E4%BA%A7%E7%9A%84%E8%B5%B7%E6%AD%A2"><span class="nav-number">6.1.8.</span> <span class="nav-text">表示生产的起止</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E7%BB%99%E7%9F%A9%E9%98%B5%E8%B5%8B%E5%88%9D%E5%80%BC"><span class="nav-number">6.2.</span> <span class="nav-text">可以给矩阵赋初值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#data"><span class="nav-number">6.2.1.</span> <span class="nav-text">data:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#a-1-2-3-4-5-6"><span class="nav-number">6.2.2.</span> <span class="nav-text">a&#x3D;1,2,3,4,5,6;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#b-11-22-33-44-55-66"><span class="nav-number">6.2.3.</span> <span class="nav-text">b&#x3D;11,22,33,44,55,66;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#enddata"><span class="nav-number">6.2.4.</span> <span class="nav-text">enddata</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#data-enddata%E8%A1%A8%E7%A4%BA%E7%9F%A9%E9%98%B5%E8%B5%8B%E5%80%BC%E7%9A%84%E8%B5%B7%E6%AD%A2"><span class="nav-number">6.2.5.</span> <span class="nav-text">data:enddata表示矩阵赋值的起止</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5"><span class="nav-number">6.3.</span> <span class="nav-text">二维矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Cooperation-gc-gc-c"><span class="nav-number">6.3.1.</span> <span class="nav-text">Cooperation(gc,gc) : c;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Cooperation%E6%98%AF%E4%B8%A4%E4%B8%AA%E5%B0%8F%E5%B7%A5%E5%8E%82%E5%90%88%E5%B9%B6%E8%80%8C%E6%88%90"><span class="nav-number">6.3.2.</span> <span class="nav-text">Cooperation是两个小工厂合并而成</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E7%9F%A9%E9%98%B5%E8%B5%8B%E5%80%BC"><span class="nav-number">6.4.</span> <span class="nav-text">二维矩阵赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#c-1-2-3-4-5"><span class="nav-number">6.4.1.</span> <span class="nav-text">c&#x3D;1,2,3,4,5</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#6-7-8-9-10"><span class="nav-number">6.4.2.</span> <span class="nav-text">6,7,8,9,10</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#11-12-13-14-15"><span class="nav-number">6.4.3.</span> <span class="nav-text">11,12,13,14,15</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#16-17-18-19-20"><span class="nav-number">6.4.4.</span> <span class="nav-text">16,17,18,19,20</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#21-22-23-24-25"><span class="nav-number">6.4.5.</span> <span class="nav-text">21,22,23,24,25;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.</span> <span class="nav-text">for循环</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF%E8%A6%81%E6%8B%AC%E8%B5%B7%E6%95%B4%E4%B8%AA%E5%BE%AA%E7%8E%AF"><span class="nav-number">7.0.1.</span> <span class="nav-text">for循环要括起整个循环</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for%E5%BE%AA%E7%8E%AF%E5%86%85%E9%83%A8%EF%BC%8C%E8%A6%81%E5%85%88%E5%86%99%E5%B7%A5%E5%8E%82%EF%BC%8C%E4%BB%A5%E5%91%8A%E8%AF%89%E5%BE%AA%E7%8E%AF%E5%87%A0%E6%AC%A1"><span class="nav-number">7.0.2.</span> <span class="nav-text">for循环内部，要先写工厂，以告诉循环几次</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%80%E7%BB%B4%E7%9F%A9%E9%98%B5-i-%E5%8F%AF%E7%9C%81%E7%95%A5"><span class="nav-number">7.0.3.</span> <span class="nav-text">一维矩阵 $i$ 可省略</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sets-1"><span class="nav-number">7.0.4.</span> <span class="nav-text">sets:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#gc-1-5-a-x"><span class="nav-number">7.0.5.</span> <span class="nav-text">gc &#x2F;1..5&#x2F; :a,x;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#endsets-1"><span class="nav-number">7.0.6.</span> <span class="nav-text">endsets</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#data-1"><span class="nav-number">7.0.7.</span> <span class="nav-text">data:</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#a-1-2-3-4-5"><span class="nav-number">7.0.8.</span> <span class="nav-text">a&#x3D;1,2,3,4,5;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#enddata-1"><span class="nav-number">7.0.9.</span> <span class="nav-text">enddata</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#max-s"><span class="nav-number">7.0.10.</span> <span class="nav-text">max &#x3D;s;</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#for-gc-i-s-a-i-x-i"><span class="nav-number">7.0.11.</span> <span class="nav-text">@for(gc(i):s&#x3D;a(i)*x(i));</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sum%E6%B1%82%E5%92%8C"><span class="nav-number">8.</span> <span class="nav-text">sum求和</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#sum%E6%B1%82%E5%92%8C%E4%B8%8D%E8%A6%81%E6%8B%AC%E8%B5%B7%E6%89%80%E6%9C%89%E6%9D%A1%E4%BB%B6-%E4%B8%AD%E9%97%B4%E5%8A%A0%E4%B8%8Asum"><span class="nav-number">8.0.1.</span> <span class="nav-text">sum求和不要括起所有条件,中间加上sum</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sum-gc-i-x-i-5000"><span class="nav-number">8.0.2.</span> <span class="nav-text">@sum(gc(i):x(i))&#x3D;5000;</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B4%E4%B8%AA%E7%A8%8B%E5%BA%8F%E5%A5%97%E4%B8%8Amodel-end"><span class="nav-number">9.</span> <span class="nav-text">整个程序套上model:end</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="良奈"
+      src="/%5Cimages%5Cgirl_0.jpg">
+  <p class="site-author-name" itemprop="name">良奈</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">良奈</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
