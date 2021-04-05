@@ -140,6 +140,116 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/05/Python%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/yuhao5910/yuhao5910.github.io/blob/main/images/girl_0.jpg?raw=true">
+      <meta itemprop="name" content="良奈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良奈的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/05/Python%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87/" class="post-title-link" itemprop="url">Python索引和切片</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-05 07:35:42 / 修改时间：08:27:34" itemprop="dateCreated datePublished" datetime="2021-04-05T07:35:42+08:00">2021-04-05</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Python索引"><a href="#Python索引" class="headerlink" title="Python索引"></a>Python索引</h3><h5 id="计算机采用二进制，只有0和1两个数字"><a href="#计算机采用二进制，只有0和1两个数字" class="headerlink" title="计算机采用二进制，只有0和1两个数字"></a>计算机采用二进制，只有0和1两个数字</h5><h5 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h5><p>我们用 2位二进制数，可以表示</p>
+<script type="math/tex; mode=display">
+00\qquad=0\\
+01\qquad=1\\
+10\qquad=2\\
+11\qquad=3</script><p>总共有四个数字</p>
+<h4 id="n位二进制数最多表示-2-n-个数"><a href="#n位二进制数最多表示-2-n-个数" class="headerlink" title="n位二进制数最多表示$2^{n}$个数"></a>n位二进制数最多表示$2^{n}$个数</h4><h4 id="最大表示数-2-n-1"><a href="#最大表示数-2-n-1" class="headerlink" title="最大表示数$2^{n}-1$"></a>最大表示数$2^{n}-1$</h4><h3 id="最小表示数0"><a href="#最小表示数0" class="headerlink" title="最小表示数0"></a>最小表示数0</h3><h3 id="所以索引的时候起点为0（假设从1开始，最开始的0就浪费掉了）"><a href="#所以索引的时候起点为0（假设从1开始，最开始的0就浪费掉了）" class="headerlink" title="所以索引的时候起点为0（假设从1开始，最开始的0就浪费掉了）"></a>所以索引的时候起点为0（假设从1开始，最开始的0就浪费掉了）</h3><h5 id="例如：-1"><a href="#例如：-1" class="headerlink" title="例如："></a>例如：</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>]</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">0</span>],num[<span class="number">1</span>],num[<span class="number">2</span>],num[<span class="number">3</span>],num[<span class="number">4</span>])</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>3 6 9 10 11</p>
+</blockquote>
+<h5 id="那么"><a href="#那么" class="headerlink" title="那么:"></a>那么:</h5><p>num[0]的值为3</p>
+<p>num[1]的值为6</p>
+<p>num[2]的值为9</p>
+<p>num[3]的值为10</p>
+<p>num[4]的值为11</p>
+<h3 id="注意点："><a href="#注意点：" class="headerlink" title="注意点："></a>注意点：</h3><h4 id="因为索引从0开始，n个元素最大到num-n-1"><a href="#因为索引从0开始，n个元素最大到num-n-1" class="headerlink" title="因为索引从0开始，n个元素最大到num[n-1]"></a>因为索引从0开始，n个元素最大到num[n-1]</h4><h5 id="例如：如果使用num-5-则会报错list-index-out-of-range"><a href="#例如：如果使用num-5-则会报错list-index-out-of-range" class="headerlink" title="例如：如果使用num[5]则会报错list index out of range"></a>例如：如果使用num[5]则会报错list index out of range</h5><h5 id="（列表索引超出范围）（num-4-11-11后面没有数了）"><a href="#（列表索引超出范围）（num-4-11-11后面没有数了）" class="headerlink" title="（列表索引超出范围）（num[4]=11,11后面没有数了）"></a>（列表索引超出范围）（num[4]=11,11后面没有数了）</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(num[<span class="number">5</span>])</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>Traceback (most recent call last):<br>  File “D:/Projects/Python/pythonProject/main.py”, line 2, in <module><br>    print(num[5])<br>IndexError: list index out of range</p>
+</blockquote>
+<h3 id="Python支持负数索引"><a href="#Python支持负数索引" class="headerlink" title="Python支持负数索引"></a>Python支持负数索引</h3><h5 id="例如：-2"><a href="#例如：-2" class="headerlink" title="例如："></a>例如：</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>]</span><br><span class="line"><span class="built_in">print</span>(num[-<span class="number">5</span>],num[-<span class="number">4</span>],num[-<span class="number">3</span>],num[-<span class="number">2</span>],num[-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h5><blockquote>
+<p>3 6 9 10 11</p>
+</blockquote>
+<h4 id="n个元素，-a-gt-0"><a href="#n个元素，-a-gt-0" class="headerlink" title="n个元素，$a&gt;0$,"></a>n个元素，$a&gt;0$,</h4><h4 id="num-a-等价于"><a href="#num-a-等价于" class="headerlink" title="num[-a]等价于"></a>num[-a]等价于</h4><h4 id="num-n-a"><a href="#num-n-a" class="headerlink" title="num[n-a]"></a>num[n-a]</h4><h4 id="就转化为正数索引了"><a href="#就转化为正数索引了" class="headerlink" title="就转化为正数索引了"></a>就转化为正数索引了</h4><h3 id="Python切片"><a href="#Python切片" class="headerlink" title="Python切片"></a>Python切片</h3><h4 id="切片取出多个元素"><a href="#切片取出多个元素" class="headerlink" title="切片取出多个元素"></a>切片取出多个元素</h4><h5 id="有四种形式（a-lt-b）"><a href="#有四种形式（a-lt-b）" class="headerlink" title="有四种形式（a&lt;b）"></a>有四种形式（a&lt;b）</h5><h5 id="num-取出列表所有元素"><a href="#num-取出列表所有元素" class="headerlink" title="num[:]取出列表所有元素"></a>num[:]取出列表所有元素</h5><h5 id="num-a-取出从a开始（包含a）的所有元素"><a href="#num-a-取出从a开始（包含a）的所有元素" class="headerlink" title="num[a:]取出从a开始（包含a）的所有元素"></a>num[a:]取出从a开始（包含a）的所有元素</h5><h5 id="num-b-取出b之前（不包含b）的所有元素"><a href="#num-b-取出b之前（不包含b）的所有元素" class="headerlink" title="num[:b]取出b之前（不包含b）的所有元素"></a>num[:b]取出b之前（不包含b）的所有元素</h5><h5 id="num-a-b-取出从a到b（包含a，不包含b）的所有元素"><a href="#num-a-b-取出从a到b（包含a，不包含b）的所有元素" class="headerlink" title="num[a:b]取出从a到b（包含a，不包含b）的所有元素"></a>num[a:b]取出从a到b（包含a，不包含b）的所有元素</h5><h5 id="例如：-3"><a href="#例如：-3" class="headerlink" title="例如："></a>例如：</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>]</span><br><span class="line"><span class="built_in">print</span>(num[:])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">0</span>:])</span><br><span class="line"><span class="built_in">print</span>(num[:-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">1</span>:-<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>3 6 9 10 11<br>[3, 6, 9, 10, 11]<br>[3, 6, 9, 10, 11]<br>[3, 6, 9, 10]<br>[6, 9]</p>
+</blockquote>
+<h4 id="也有带步长-Step-的形式，允许我们间隔取数-A0"><a href="#也有带步长-Step-的形式，允许我们间隔取数-A0" class="headerlink" title="也有带步长(Step)的形式，允许我们间隔取数(A0)"></a>也有带步长(Step)的形式，允许我们间隔取数(A<B,S>0)</h4><h5 id="num-​A-B-S-取出从A到B（包含A，不包含B，步长为S）的所有元素"><a href="#num-​A-B-S-取出从A到B（包含A，不包含B，步长为S）的所有元素" class="headerlink" title="num[​A:B:S]取出从A到B（包含A，不包含B，步长为S）的所有元素"></a>num[​A:B:S]取出从A到B（包含A，不包含B，步长为S）的所有元素</h5><h5 id="例如：-4"><a href="#例如：-4" class="headerlink" title="例如："></a>例如：</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>]</span><br><span class="line"><span class="built_in">print</span>(num[::<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>[0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20]</p>
+</blockquote>
+<h4 id="步长也可以是负数-A-gt-B-S-lt-0"><a href="#步长也可以是负数-A-gt-B-S-lt-0" class="headerlink" title="步长也可以是负数(A&gt;B,S&lt;0)"></a>步长也可以是负数(A&gt;B,S&lt;0)</h4><h4 id="num-A-B-S-取出从A到B（A-gt-B-包含A，不包含B，步长为S）"><a href="#num-A-B-S-取出从A到B（A-gt-B-包含A，不包含B，步长为S）" class="headerlink" title="num[A,B,S]取出从A到B（A&gt;B,包含A，不包含B，步长为S）"></a>num[A,B,S]取出从A到B（A&gt;B,包含A，不包含B，步长为S）</h4><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>]</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">20</span>:<span class="number">0</span>:-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">20</span>::-<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>[20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1]<br>[20, 18, 16, 14, 12, 10, 8, 6, 4, 2, 0]</p>
+</blockquote>
+<h3 id="注意点：-1"><a href="#注意点：-1" class="headerlink" title="注意点："></a>注意点：</h3><h4 id="步长为负数时A大于B"><a href="#步长为负数时A大于B" class="headerlink" title="步长为负数时A大于B"></a>步长为负数时A大于B</h4>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/31/Lingo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -476,7 +586,7 @@ T=(\eta_{1},\eta_{2},...)</script><h5 id="3-令-x-Ty-就可以写出二次型的
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
