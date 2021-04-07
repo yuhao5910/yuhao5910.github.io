@@ -140,6 +140,133 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/06/Python%E5%AD%97%E7%AC%A6%E4%B8%B2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/yuhao5910/yuhao5910.github.io/blob/main/images/girl_0.jpg?raw=true">
+      <meta itemprop="name" content="良奈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良奈的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/06/Python%E5%AD%97%E7%AC%A6%E4%B8%B2/" class="post-title-link" itemprop="url">Python字符串</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-04-06 18:00:14" itemprop="dateCreated datePublished" datetime="2021-04-06T18:00:14+08:00">2021-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-07 17:59:12" itemprop="dateModified" datetime="2021-04-07T17:59:12+08:00">2021-04-07</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="Python字符串"><a href="#Python字符串" class="headerlink" title="Python字符串"></a>Python字符串</h3><h5 id="字符串常量有三种表示形式"><a href="#字符串常量有三种表示形式" class="headerlink" title="字符串常量有三种表示形式"></a>字符串常量有三种表示形式</h5><p>单引号：</p>
+<p>双引号：</p>
+<p>三引号：可以输入多行字符串，自动添加换行符</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;Nice to meet you&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Nice to meet you&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;&quot;Nice</span></span><br><span class="line"><span class="string">to</span></span><br><span class="line"><span class="string">meet</span></span><br><span class="line"><span class="string">you&quot;&quot;&quot;</span>)</span><br><span class="line">a=<span class="string">&quot;&quot;&quot;Nice</span></span><br><span class="line"><span class="string">to</span></span><br><span class="line"><span class="string">meet</span></span><br><span class="line"><span class="string">you&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span> (<span class="built_in">repr</span>(a))  %<span class="built_in">repr</span>()打印字符串本来形式</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果：</p>
+<blockquote>
+<p>Nice to meet you<br>Nice to meet you<br>Nice<br>to<br>meet<br>you</p>
+<p>‘Nice\nto\nmeet\nyou’</p>
+</blockquote>
+<p>Raw字符串：抑制转义</p>
+<p>格式化字符串：</p>
+<p>例如：</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">str</span>=<span class="string">&quot;Nice to meet you&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">u&quot;你好 哈哈&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">r&quot;Nice to\vmeet\tyou&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">f&quot;I want to say <span class="subst">&#123;<span class="built_in">str</span>&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果：</p>
+<blockquote>
+<p>Nice to meet you<br>你好 哈哈<br>Nice to\vmeet\tyou<br>I want to say Nice to meet you</p>
+</blockquote>
+<h5 id="repr-和str-方法对比："><a href="#repr-和str-方法对比：" class="headerlink" title="repr()和str()方法对比："></a>repr()和str()方法对比：</h5><p>repr()打印字符原本形式</p>
+<p>str()打印用户友好形式</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;&quot;&quot;Nice</span></span><br><span class="line"><span class="string">to</span></span><br><span class="line"><span class="string">meet</span></span><br><span class="line"><span class="string">you&quot;&quot;&quot;</span></span><br><span class="line"><span class="built_in">print</span> (<span class="built_in">repr</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">str</span>(a))</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果：</p>
+<blockquote>
+<p>‘Nice\nto\nmeet\nyou’<br>Nice<br>to<br>meet<br>you</p>
+</blockquote>
+<h5 id="字符串支持加法和乘法"><a href="#字符串支持加法和乘法" class="headerlink" title="字符串支持加法和乘法"></a>字符串支持加法和乘法</h5><h5 id="号将两个字符串连接起来（没有减法）"><a href="#号将两个字符串连接起来（没有减法）" class="headerlink" title="+号将两个字符串连接起来（没有减法）"></a>+号将两个字符串连接起来（没有减法）</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;hello &quot;</span></span><br><span class="line">b=<span class="string">&quot;nihao&quot;</span></span><br><span class="line"><span class="built_in">print</span>(a+b)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>hello nihao</p>
+</blockquote>
+<h5 id="号将字符串重复n次"><a href="#号将字符串重复n次" class="headerlink" title="*号将字符串重复n次"></a>*号将字符串重复n次</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;hello &quot;</span></span><br><span class="line"><span class="built_in">print</span>(a*<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>hello hello hello </p>
+</blockquote>
+<h3 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h3><h4 id="s-lstrip-和s-rstrip"><a href="#s-lstrip-和s-rstrip" class="headerlink" title="s.lstrip()和s.rstrip()"></a>s.lstrip()和s.rstrip()</h4><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot; nihao &quot;</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(a.lstrip())</span><br><span class="line"><span class="built_in">print</span>(a.lstrip().rstrip())</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<p> nihao<br>nihao<br>nihao</p>
+<h3 id="len-求字符串长度"><a href="#len-求字符串长度" class="headerlink" title="len()求字符串长度"></a>len()求字符串长度</h3><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;Nice to meet you&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">len</span>(a))</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<p>16</p>
+<h2 id="字符串格式化方法（重点）"><a href="#字符串格式化方法（重点）" class="headerlink" title="字符串格式化方法（重点）"></a>字符串格式化方法（重点）</h2><h5 id="有两种格式化方式"><a href="#有两种格式化方式" class="headerlink" title="有两种格式化方式"></a>有两种格式化方式</h5><p>用{}和.format()配合进行格式化</p>
+<p>用%s和%配合进行格式化（类似C语言）</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;Nice to meet you&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&#123;&#125;&quot;</span>.<span class="built_in">format</span>(a))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello%s&quot;</span>%a)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>helloNice to meet you<br>helloNice to meet you</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/05/Python%E7%B4%A2%E5%BC%95%E5%92%8C%E5%88%87%E7%89%87/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -163,10 +290,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-04-05 07:35:42 / 修改时间：08:32:44" itemprop="dateCreated datePublished" datetime="2021-04-05T07:35:42+08:00">2021-04-05</time>
+              <time title="创建时间：2021-04-05 07:35:42" itemprop="dateCreated datePublished" datetime="2021-04-05T07:35:42+08:00">2021-04-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-07 17:50:39" itemprop="dateModified" datetime="2021-04-07T17:50:39+08:00">2021-04-07</time>
+              </span>
 
           
 
@@ -212,14 +345,16 @@
 <h5 id="结果："><a href="#结果：" class="headerlink" title="结果："></a>结果：</h5><blockquote>
 <p>3 6 9 10 11</p>
 </blockquote>
-<h4 id="n个元素，-a-gt-0"><a href="#n个元素，-a-gt-0" class="headerlink" title="n个元素，$a&gt;0$,"></a>n个元素，$a&gt;0$,</h4><h4 id="num-a-等价于"><a href="#num-a-等价于" class="headerlink" title="num[-a]等价于"></a>num[-a]等价于</h4><h4 id="num-n-a"><a href="#num-n-a" class="headerlink" title="num[n-a]"></a>num[n-a]</h4><h4 id="就转化为正数索引了"><a href="#就转化为正数索引了" class="headerlink" title="就转化为正数索引了"></a>就转化为正数索引了</h4><h3 id="Python切片"><a href="#Python切片" class="headerlink" title="Python切片"></a>Python切片</h3><h4 id="切片取出多个元素"><a href="#切片取出多个元素" class="headerlink" title="切片取出多个元素"></a>切片取出多个元素</h4><h5 id="有四种形式（a-lt-b）"><a href="#有四种形式（a-lt-b）" class="headerlink" title="有四种形式（a&lt;b）"></a>有四种形式（a&lt;b）</h5><h5 id="num-取出列表所有元素"><a href="#num-取出列表所有元素" class="headerlink" title="num[:]取出列表所有元素"></a>num[:]取出列表所有元素</h5><h5 id="num-a-取出从a开始（包含a）的所有元素"><a href="#num-a-取出从a开始（包含a）的所有元素" class="headerlink" title="num[a:]取出从a开始（包含a）的所有元素"></a>num[a:]取出从a开始（包含a）的所有元素</h5><h5 id="num-b-取出b之前（不包含b）的所有元素"><a href="#num-b-取出b之前（不包含b）的所有元素" class="headerlink" title="num[:b]取出b之前（不包含b）的所有元素"></a>num[:b]取出b之前（不包含b）的所有元素</h5><h5 id="num-a-b-取出从a到b（包含a，不包含b）的所有元素"><a href="#num-a-b-取出从a到b（包含a，不包含b）的所有元素" class="headerlink" title="num[a:b]取出从a到b（包含a，不包含b）的所有元素"></a>num[a:b]取出从a到b（包含a，不包含b）的所有元素</h5><h5 id="例如：-3"><a href="#例如：-3" class="headerlink" title="例如："></a>例如：</h5><blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>]</span><br><span class="line"><span class="built_in">print</span>(num[:])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">0</span>:])</span><br><span class="line"><span class="built_in">print</span>(num[:-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">1</span>:-<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
+<h4 id="n个元素，-a-gt-0"><a href="#n个元素，-a-gt-0" class="headerlink" title="n个元素，$a&gt;0$,"></a>n个元素，$a&gt;0$,</h4><h4 id="num-a-等价于"><a href="#num-a-等价于" class="headerlink" title="num[-a]等价于"></a>num[-a]等价于</h4><h4 id="num-n-a"><a href="#num-n-a" class="headerlink" title="num[n-a]"></a>num[n-a]</h4><h4 id="就转化为正数索引了"><a href="#就转化为正数索引了" class="headerlink" title="就转化为正数索引了"></a>就转化为正数索引了</h4><h3 id="Python切片（是一种拷贝）"><a href="#Python切片（是一种拷贝）" class="headerlink" title="Python切片（是一种拷贝）"></a>Python切片（是一种拷贝）</h3><h4 id="切片取出多个元素"><a href="#切片取出多个元素" class="headerlink" title="切片取出多个元素"></a>切片取出多个元素</h4><h5 id="有四种形式（a-lt-b）"><a href="#有四种形式（a-lt-b）" class="headerlink" title="有四种形式（a&lt;b）"></a>有四种形式（a&lt;b）</h5><h5 id="num-取出列表所有元素"><a href="#num-取出列表所有元素" class="headerlink" title="num[:]取出列表所有元素"></a>num[:]取出列表所有元素</h5><h5 id="num-a-取出从a开始（包含a）的所有元素"><a href="#num-a-取出从a开始（包含a）的所有元素" class="headerlink" title="num[a:]取出从a开始（包含a）的所有元素"></a>num[a:]取出从a开始（包含a）的所有元素</h5><h5 id="num-b-取出b之前（不包含b）的所有元素"><a href="#num-b-取出b之前（不包含b）的所有元素" class="headerlink" title="num[:b]取出b之前（不包含b）的所有元素"></a>num[:b]取出b之前（不包含b）的所有元素</h5><h5 id="num-a-b-取出从a到b（包含a，不包含b）的所有元素"><a href="#num-a-b-取出从a到b（包含a，不包含b）的所有元素" class="headerlink" title="num[a:b]取出从a到b（包含a，不包含b）的所有元素"></a>num[a:b]取出从a到b（包含a，不包含b）的所有元素</h5><h5 id="例如：（注意slice的使用）"><a href="#例如：（注意slice的使用）" class="headerlink" title="例如：（注意slice的使用）"></a>例如：（注意slice的使用）</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">3</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>]</span><br><span class="line"><span class="built_in">print</span>(num[:])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">0</span>:])</span><br><span class="line"><span class="built_in">print</span>(num[:-<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="number">1</span>:-<span class="number">2</span>])</span><br><span class="line">%——————————————————————</span><br><span class="line"><span class="built_in">print</span>(num[<span class="built_in">slice</span>(<span class="literal">None</span>,<span class="literal">None</span>)])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="built_in">slice</span>(<span class="number">0</span>,<span class="literal">None</span>)])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="built_in">slice</span>(<span class="number">0</span>,-<span class="number">1</span>)])</span><br><span class="line"><span class="built_in">print</span>(num[<span class="built_in">slice</span>(<span class="number">1</span>,-<span class="number">2</span>)])</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>结果</p>
 <blockquote>
 <p>3 6 9 10 11<br>[3, 6, 9, 10, 11]<br>[3, 6, 9, 10, 11]<br>[3, 6, 9, 10]<br>[6, 9]</p>
+<p>——————————</p>
+<p>[3, 6, 9, 10, 11]<br>[3, 6, 9, 10, 11]<br>[3, 6, 9, 10]<br>[6, 9]</p>
 </blockquote>
-<h4 id="也有带步长-Step-的形式，允许我们间隔取数-A0"><a href="#也有带步长-Step-的形式，允许我们间隔取数-A0" class="headerlink" title="也有带步长(Step)的形式，允许我们间隔取数(A0)"></a>也有带步长(Step)的形式，允许我们间隔取数(A<B,S>0)</h4><h5 id="num-​A-B-S-取出从A到B（包含A，不包含B，步长为S）的所有元素"><a href="#num-​A-B-S-取出从A到B（包含A，不包含B，步长为S）的所有元素" class="headerlink" title="num[​A:B:S]取出从A到B（包含A，不包含B，步长为S）的所有元素"></a>num[​A:B:S]取出从A到B（包含A，不包含B，步长为S）的所有元素</h5><h5 id="例如：-4"><a href="#例如：-4" class="headerlink" title="例如："></a>例如：</h5><blockquote>
+<h4 id="也有带步长-Step-的形式，允许我们间隔取数-A0"><a href="#也有带步长-Step-的形式，允许我们间隔取数-A0" class="headerlink" title="也有带步长(Step)的形式，允许我们间隔取数(A0)"></a>也有带步长(Step)的形式，允许我们间隔取数(A<B,S>0)</h4><h5 id="num-​A-B-S-取出从A到B（包含A，不包含B，步长为S）的所有元素"><a href="#num-​A-B-S-取出从A到B（包含A，不包含B，步长为S）的所有元素" class="headerlink" title="num[​A:B:S]取出从A到B（包含A，不包含B，步长为S）的所有元素"></a>num[​A:B:S]取出从A到B（包含A，不包含B，步长为S）的所有元素</h5><h5 id="例如：-3"><a href="#例如：-3" class="headerlink" title="例如："></a>例如：</h5><blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">num=[<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">15</span>, <span class="number">16</span>, <span class="number">17</span>, <span class="number">18</span>, <span class="number">19</span>, <span class="number">20</span>]</span><br><span class="line"><span class="built_in">print</span>(num[::<span class="number">2</span>])</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p>结果</p>
@@ -358,7 +493,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-31 13:03:10" itemprop="dateModified" datetime="2021-03-31T13:03:10+08:00">2021-03-31</time>
+                <time title="修改时间：2021-04-06 17:24:18" itemprop="dateModified" datetime="2021-04-06T17:24:18+08:00">2021-04-06</time>
               </span>
 
           
@@ -375,7 +510,7 @@
           <h3 id="Cauchy收敛原理在数列"><a href="#Cauchy收敛原理在数列" class="headerlink" title="Cauchy收敛原理在数列"></a>Cauchy收敛原理在数列</h3><h5 id="定理-数列-x-n-收敛的充分必要条件是：-x-n-是基本数列"><a href="#定理-数列-x-n-收敛的充分必要条件是：-x-n-是基本数列" class="headerlink" title="定理 数列$\{x_{n}\}$收敛的充分必要条件是：$\{x_{n}\}$是基本数列."></a>定理 数列$\{x_{n}\}$收敛的充分必要条件是：$\{x_{n}\}$是基本数列.</h5><h3 id="基本数列定义"><a href="#基本数列定义" class="headerlink" title="基本数列定义"></a>基本数列定义</h3><h5 id="定义-如果数列-x-n-具有以下特性：对于任意给定的-varepsilon-gt-0-，存在正整数-N-，使得当-n-m-gt-N-时成立"><a href="#定义-如果数列-x-n-具有以下特性：对于任意给定的-varepsilon-gt-0-，存在正整数-N-，使得当-n-m-gt-N-时成立" class="headerlink" title="定义 如果数列$\{x_{n}\}$具有以下特性：对于任意给定的$\varepsilon&gt;0$，存在正整数$N$，使得当$n,m&gt;N$时成立"></a>定义 如果数列$\{x_{n}\}$具有以下特性：对于任意给定的$\varepsilon&gt;0$，存在正整数$N$，使得当$n,m&gt;N$时成立</h5><script type="math/tex; mode=display">
 |x_{n}-x_{m}|<\varepsilon,</script><h5 id="则称数列-x-n-是一个基本数列"><a href="#则称数列-x-n-是一个基本数列" class="headerlink" title="则称数列$\{x_{n}\}$是一个基本数列"></a>则称数列$\{x_{n}\}$是一个基本数列</h5><h3 id="Cauchy收敛原理在函数"><a href="#Cauchy收敛原理在函数" class="headerlink" title="Cauchy收敛原理在函数"></a>Cauchy收敛原理在函数</h3><h5 id="定理-函数极限-lim-limits-n-to-infty-存在而且有限的充分必要条件是：对于任意给定的-varepsilon-gt-0-存在-X-gt-0-使得对一切-x’-x’’-gt-X-成立"><a href="#定理-函数极限-lim-limits-n-to-infty-存在而且有限的充分必要条件是：对于任意给定的-varepsilon-gt-0-存在-X-gt-0-使得对一切-x’-x’’-gt-X-成立" class="headerlink" title="定理 函数极限$\lim\limits_{n\to+\infty}$存在而且有限的充分必要条件是：对于任意给定的$\varepsilon&gt;0$,存在$X&gt;0$,使得对一切$x’,x’’&gt;X$,成立"></a>定理 函数极限$\lim\limits_{n\to+\infty}$存在而且有限的充分必要条件是：对于任意给定的$\varepsilon&gt;0$,存在$X&gt;0$,使得对一切$x’,x’’&gt;X$,成立</h5><script type="math/tex; mode=display">
 |f(x')-f(x'')|<\varepsilon</script><h3 id="Cauchy收敛原理在反常积分的应用"><a href="#Cauchy收敛原理在反常积分的应用" class="headerlink" title="Cauchy收敛原理在反常积分的应用"></a>Cauchy收敛原理在反常积分的应用</h3><h5 id="定理-反常积分-int-a-infty-f-x-dx-收敛的充分必要条件是：对任意给定的-varepsilon-gt-0-存在-A-0-ge-a-使得对任意-A-A’-ge-A-0-有"><a href="#定理-反常积分-int-a-infty-f-x-dx-收敛的充分必要条件是：对任意给定的-varepsilon-gt-0-存在-A-0-ge-a-使得对任意-A-A’-ge-A-0-有" class="headerlink" title="定理 反常积分$\int_{a}^{+\infty}f(x)dx$收敛的充分必要条件是：对任意给定的$\varepsilon&gt;0$,存在$A_{0} \ge a$,使得对任意$A,A’ \ge A_{0}$,有"></a>定理 反常积分$\int_{a}^{+\infty}f(x)dx$收敛的充分必要条件是：对任意给定的$\varepsilon&gt;0$,存在$A_{0} \ge a$,使得对任意$A,A’ \ge A_{0}$,有</h5><script type="math/tex; mode=display">
-|\int_{A}^{A'}f(x)dx|<\varepsilon</script><h5 id="推论-若反常积分-int-a-infty-f-x-dx-绝对收敛，则它一定收敛"><a href="#推论-若反常积分-int-a-infty-f-x-dx-绝对收敛，则它一定收敛" class="headerlink" title="推论 若反常积分$\int_{a}^{+\infty}f(x)dx$绝对收敛，则它一定收敛."></a>推论 若反常积分$\int_{a}^{+\infty}f(x)dx$绝对收敛，则它一定收敛.</h5><h5 id="证明-1-必要性：易证"><a href="#证明-1-必要性：易证" class="headerlink" title="证明(1)必要性：易证"></a>证明(1)必要性：易证</h5><h5 id="充分性：波维尔凝聚定理"><a href="#充分性：波维尔凝聚定理" class="headerlink" title="充分性：波维尔凝聚定理"></a>充分性：波维尔凝聚定理</h5><h5 id="2-必要性：易证"><a href="#2-必要性：易证" class="headerlink" title="(2)必要性：易证"></a>(2)必要性：易证</h5><h5 id="充分性："><a href="#充分性：" class="headerlink" title="充分性："></a>充分性：</h5><h5 id="数列的Cauchy收敛原理和海涅归结定理"><a href="#数列的Cauchy收敛原理和海涅归结定理" class="headerlink" title="数列的Cauchy收敛原理和海涅归结定理"></a>数列的Cauchy收敛原理和海涅归结定理</h5><h5 id="假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。"><a href="#假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。" class="headerlink" title="假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。"></a>假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。</h5><h5 id="参考书籍：《数学分析》-陈纪修"><a href="#参考书籍：《数学分析》-陈纪修" class="headerlink" title="参考书籍：《数学分析》 陈纪修"></a>参考书籍：《数学分析》 陈纪修</h5>
+|\int_{A}^{A'}f(x)dx|<\varepsilon</script><h5 id="推论-若反常积分-int-a-infty-f-x-dx-绝对收敛，则它一定收敛"><a href="#推论-若反常积分-int-a-infty-f-x-dx-绝对收敛，则它一定收敛" class="headerlink" title="推论 若反常积分$\int_{a}^{+\infty}f(x)dx$绝对收敛，则它一定收敛."></a>推论 若反常积分$\int_{a}^{+\infty}f(x)dx$绝对收敛，则它一定收敛.</h5><h5 id="应用-理论证明和反常积分发散"><a href="#应用-理论证明和反常积分发散" class="headerlink" title="应用 理论证明和反常积分发散"></a>应用 理论证明和反常积分发散</h5><h5 id="证明-1-必要性：易证"><a href="#证明-1-必要性：易证" class="headerlink" title="证明(1)必要性：易证"></a>证明(1)必要性：易证</h5><h5 id="充分性：波维尔凝聚定理"><a href="#充分性：波维尔凝聚定理" class="headerlink" title="充分性：波维尔凝聚定理"></a>充分性：波维尔凝聚定理</h5><h5 id="2-必要性：易证"><a href="#2-必要性：易证" class="headerlink" title="(2)必要性：易证"></a>(2)必要性：易证</h5><h5 id="充分性："><a href="#充分性：" class="headerlink" title="充分性："></a>充分性：</h5><h5 id="数列的Cauchy收敛原理和海涅归结定理"><a href="#数列的Cauchy收敛原理和海涅归结定理" class="headerlink" title="数列的Cauchy收敛原理和海涅归结定理"></a>数列的Cauchy收敛原理和海涅归结定理</h5><h5 id="假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。"><a href="#假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。" class="headerlink" title="假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。"></a>假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。</h5><h5 id="参考书籍：《数学分析》-陈纪修"><a href="#参考书籍：《数学分析》-陈纪修" class="headerlink" title="参考书籍：《数学分析》 陈纪修"></a>参考书籍：《数学分析》 陈纪修</h5>
       
     </div>
 
@@ -588,7 +723,7 @@ T=(\eta_{1},\eta_{2},...)</script><h5 id="3-令-x-Ty-就可以写出二次型的
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
