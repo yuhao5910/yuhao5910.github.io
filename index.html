@@ -140,6 +140,84 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/07/Python%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/yuhao5910/yuhao5910.github.io/blob/main/images/girl_0.jpg?raw=true">
+      <meta itemprop="name" content="良奈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良奈的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/07/Python%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E6%8D%A2/" class="post-title-link" itemprop="url">Python字符串转换</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-07 18:02:31 / 修改时间：18:15:55" itemprop="dateCreated datePublished" datetime="2021-04-07T18:02:31+08:00">2021-04-07</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python字符串转换"><a href="#Python字符串转换" class="headerlink" title="Python字符串转换"></a>Python字符串转换</h2><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;22&quot;</span></span><br><span class="line">b=<span class="number">33</span></span><br><span class="line"><span class="built_in">print</span>(a+b)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>Traceback (most recent call last):<br>  File “D:/Projects/Python/pythonProject/main.py”, line 3, in <module><br>    print(a+b)</p>
+</blockquote>
+<p>我们看到字符串不能和数字加在一起</p>
+<h4 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h4><h5 id="int-字符串转换成整数（int-不能转换表示浮点数的字符串）"><a href="#int-字符串转换成整数（int-不能转换表示浮点数的字符串）" class="headerlink" title="int() 字符串转换成整数（int()不能转换表示浮点数的字符串）"></a>int() 字符串转换成整数（int()不能转换表示浮点数的字符串）</h5><h5 id="float-字符串转换成浮点数（float-能转换表示整数数的字符串）"><a href="#float-字符串转换成浮点数（float-能转换表示整数数的字符串）" class="headerlink" title="float() 字符串转换成浮点数（float()能转换表示整数数的字符串）"></a>float() 字符串转换成浮点数（float()能转换表示整数数的字符串）</h5><h5 id="str-数字转换成字符串"><a href="#str-数字转换成字符串" class="headerlink" title="str() 数字转换成字符串"></a>str() 数字转换成字符串</h5><h5 id="repr-数字转换成字符串"><a href="#repr-数字转换成字符串" class="headerlink" title="repr() 数字转换成字符串"></a>repr() 数字转换成字符串</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;22&quot;</span></span><br><span class="line">b=<span class="number">33</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(a)+b)</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">float</span>(a)+b)</span><br><span class="line"><span class="built_in">print</span>(a+<span class="built_in">str</span>(b))</span><br><span class="line"><span class="built_in">print</span>(a+<span class="built_in">repr</span>(b))</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>55<br>55.0<br>2233<br>2233</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;2.2&quot;</span></span><br><span class="line">b=<span class="number">3.3</span></span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">int</span>(a)+b)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>Traceback (most recent call last):<br>  File “D:/Projects/Python/pythonProject/main.py”, line 3, in <module><br>    print(int(a)+b)<br>ValueError: invalid literal for int() with base 10: ‘2.2’</p>
+</blockquote>
+<h5 id="报错：int-不能转换表示浮点数的字符串"><a href="#报错：int-不能转换表示浮点数的字符串" class="headerlink" title="报错：int()不能转换表示浮点数的字符串"></a>报错：int()不能转换表示浮点数的字符串</h5>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/06/Python%E5%AD%97%E7%AC%A6%E4%B8%B2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -171,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-07 17:59:12" itemprop="dateModified" datetime="2021-04-07T17:59:12+08:00">2021-04-07</time>
+                <time title="修改时间：2021-04-07 18:17:47" itemprop="dateModified" datetime="2021-04-07T18:17:47+08:00">2021-04-07</time>
               </span>
 
           
@@ -185,7 +263,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Python字符串"><a href="#Python字符串" class="headerlink" title="Python字符串"></a>Python字符串</h3><h5 id="字符串常量有三种表示形式"><a href="#字符串常量有三种表示形式" class="headerlink" title="字符串常量有三种表示形式"></a>字符串常量有三种表示形式</h5><p>单引号：</p>
+          <h2 id="Python字符串"><a href="#Python字符串" class="headerlink" title="Python字符串"></a>Python字符串</h2><h5 id="字符串常量有三种表示形式"><a href="#字符串常量有三种表示形式" class="headerlink" title="字符串常量有三种表示形式"></a>字符串常量有三种表示形式</h5><p>单引号：</p>
 <p>双引号：</p>
 <p>三引号：可以输入多行字符串，自动添加换行符</p>
 <blockquote>
@@ -298,7 +376,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-07 17:50:39" itemprop="dateModified" datetime="2021-04-07T17:50:39+08:00">2021-04-07</time>
+                <time title="修改时间：2021-04-07 18:17:50" itemprop="dateModified" datetime="2021-04-07T18:17:50+08:00">2021-04-07</time>
               </span>
 
           
@@ -312,7 +390,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Python索引"><a href="#Python索引" class="headerlink" title="Python索引"></a>Python索引</h3><h5 id="计算机采用二进制，只有0和1两个数字"><a href="#计算机采用二进制，只有0和1两个数字" class="headerlink" title="计算机采用二进制，只有0和1两个数字"></a>计算机采用二进制，只有0和1两个数字</h5><h5 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h5><p>我们用 2位二进制数，可以表示</p>
+          <h2 id="Python索引"><a href="#Python索引" class="headerlink" title="Python索引"></a>Python索引</h2><h5 id="计算机采用二进制，只有0和1两个数字"><a href="#计算机采用二进制，只有0和1两个数字" class="headerlink" title="计算机采用二进制，只有0和1两个数字"></a>计算机采用二进制，只有0和1两个数字</h5><h5 id="例如："><a href="#例如：" class="headerlink" title="例如："></a>例如：</h5><p>我们用 2位二进制数，可以表示</p>
 <blockquote>
 <p>00=0</p>
 <p>01=1</p>
@@ -410,10 +488,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2021-03-31 12:47:37 / 修改时间：21:42:06" itemprop="dateCreated datePublished" datetime="2021-03-31T12:47:37+08:00">2021-03-31</time>
+              <time title="创建时间：2021-03-31 12:47:37" itemprop="dateCreated datePublished" datetime="2021-03-31T12:47:37+08:00">2021-03-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-04-07 18:17:55" itemprop="dateModified" datetime="2021-04-07T18:17:55+08:00">2021-04-07</time>
+              </span>
 
           
 
@@ -426,7 +510,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="lingo不区分大小写"><a href="#lingo不区分大小写" class="headerlink" title="lingo不区分大小写"></a>lingo不区分大小写</h3><h3 id="lingo原理是一个一个方程"><a href="#lingo原理是一个一个方程" class="headerlink" title="lingo原理是一个一个方程"></a>lingo原理是一个一个方程</h3><h3 id="结尾加分号"><a href="#结尾加分号" class="headerlink" title="结尾加分号"></a>结尾加分号</h3><h3 id="默认所有变量非负"><a href="#默认所有变量非负" class="headerlink" title="默认所有变量非负"></a>默认所有变量非负</h3><blockquote>
+          <h2 id="lingo不区分大小写"><a href="#lingo不区分大小写" class="headerlink" title="lingo不区分大小写"></a>lingo不区分大小写</h2><h3 id="lingo原理是一个一个方程"><a href="#lingo原理是一个一个方程" class="headerlink" title="lingo原理是一个一个方程"></a>lingo原理是一个一个方程</h3><h3 id="结尾加分号"><a href="#结尾加分号" class="headerlink" title="结尾加分号"></a>结尾加分号</h3><h3 id="默认所有变量非负"><a href="#默认所有变量非负" class="headerlink" title="默认所有变量非负"></a>默认所有变量非负</h3><blockquote>
 <h5 id="x-2-y-2-2-x-103"><a href="#x-2-y-2-2-x-103" class="headerlink" title="x^2+y^2+2*x=103;"></a>x^2+y^2+2*x=103;</h5><h5 id="2-x-y-12"><a href="#2-x-y-12" class="headerlink" title="2*x+y=12;"></a>2*x+y=12;</h5><h5 id="y-gt-5"><a href="#y-gt-5" class="headerlink" title="y&gt;5;"></a>y&gt;5;</h5></blockquote>
 <h3 id="线性规划"><a href="#线性规划" class="headerlink" title="线性规划"></a>线性规划</h3><h5 id="只能含有一个目标函数"><a href="#只能含有一个目标函数" class="headerlink" title="只能含有一个目标函数"></a>只能含有一个目标函数</h5><h5 id="求目标函数的最大值或最小值分别用max-…或min-…"><a href="#求目标函数的最大值或最小值分别用max-…或min-…" class="headerlink" title="求目标函数的最大值或最小值分别用max=…或min=…"></a>求目标函数的最大值或最小值分别用max=…或min=…</h5><h5 id="写注释后面要有分号"><a href="#写注释后面要有分号" class="headerlink" title="写注释后面要有分号"></a>写注释后面要有分号</h5><h5 id="不区分线性规划和非线性规划"><a href="#不区分线性规划和非线性规划" class="headerlink" title="不区分线性规划和非线性规划"></a>不区分线性规划和非线性规划</h5><h5 id="建议非线性规划转变成线性规划"><a href="#建议非线性规划转变成线性规划" class="headerlink" title="建议非线性规划转变成线性规划"></a>建议非线性规划转变成线性规划</h5><blockquote>
 <h5 id="max-200x1-300x2"><a href="#max-200x1-300x2" class="headerlink" title="max=200x1+300x2;"></a>max=200<em>x1+300</em>x2;</h5><h5 id="x1-lt-100"><a href="#x1-lt-100" class="headerlink" title="x1&lt;=100;"></a>x1&lt;=100;</h5><h5 id="x2-lt-120"><a href="#x2-lt-120" class="headerlink" title="x2&lt;=120;"></a>x2&lt;=120;</h5><h5 id="x1-2-x2-lt-160"><a href="#x1-2-x2-lt-160" class="headerlink" title="x1+2*x2&lt;=160;"></a>x1+2*x2&lt;=160;</h5></blockquote>
@@ -493,7 +577,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-06 17:24:18" itemprop="dateModified" datetime="2021-04-06T17:24:18+08:00">2021-04-06</time>
+                <time title="修改时间：2021-04-07 18:18:14" itemprop="dateModified" datetime="2021-04-07T18:18:14+08:00">2021-04-07</time>
               </span>
 
           
@@ -507,7 +591,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h3 id="Cauchy收敛原理在数列"><a href="#Cauchy收敛原理在数列" class="headerlink" title="Cauchy收敛原理在数列"></a>Cauchy收敛原理在数列</h3><h5 id="定理-数列-x-n-收敛的充分必要条件是：-x-n-是基本数列"><a href="#定理-数列-x-n-收敛的充分必要条件是：-x-n-是基本数列" class="headerlink" title="定理 数列$\{x_{n}\}$收敛的充分必要条件是：$\{x_{n}\}$是基本数列."></a>定理 数列$\{x_{n}\}$收敛的充分必要条件是：$\{x_{n}\}$是基本数列.</h5><h3 id="基本数列定义"><a href="#基本数列定义" class="headerlink" title="基本数列定义"></a>基本数列定义</h3><h5 id="定义-如果数列-x-n-具有以下特性：对于任意给定的-varepsilon-gt-0-，存在正整数-N-，使得当-n-m-gt-N-时成立"><a href="#定义-如果数列-x-n-具有以下特性：对于任意给定的-varepsilon-gt-0-，存在正整数-N-，使得当-n-m-gt-N-时成立" class="headerlink" title="定义 如果数列$\{x_{n}\}$具有以下特性：对于任意给定的$\varepsilon&gt;0$，存在正整数$N$，使得当$n,m&gt;N$时成立"></a>定义 如果数列$\{x_{n}\}$具有以下特性：对于任意给定的$\varepsilon&gt;0$，存在正整数$N$，使得当$n,m&gt;N$时成立</h5><script type="math/tex; mode=display">
+          <h2 id="Cauchy收敛原理"><a href="#Cauchy收敛原理" class="headerlink" title="Cauchy收敛原理"></a>Cauchy收敛原理</h2><h3 id="Cauchy收敛原理在数列"><a href="#Cauchy收敛原理在数列" class="headerlink" title="Cauchy收敛原理在数列"></a>Cauchy收敛原理在数列</h3><h5 id="定理-数列-x-n-收敛的充分必要条件是：-x-n-是基本数列"><a href="#定理-数列-x-n-收敛的充分必要条件是：-x-n-是基本数列" class="headerlink" title="定理 数列$\{x_{n}\}$收敛的充分必要条件是：$\{x_{n}\}$是基本数列."></a>定理 数列$\{x_{n}\}$收敛的充分必要条件是：$\{x_{n}\}$是基本数列.</h5><h3 id="基本数列定义"><a href="#基本数列定义" class="headerlink" title="基本数列定义"></a>基本数列定义</h3><h5 id="定义-如果数列-x-n-具有以下特性：对于任意给定的-varepsilon-gt-0-，存在正整数-N-，使得当-n-m-gt-N-时成立"><a href="#定义-如果数列-x-n-具有以下特性：对于任意给定的-varepsilon-gt-0-，存在正整数-N-，使得当-n-m-gt-N-时成立" class="headerlink" title="定义 如果数列$\{x_{n}\}$具有以下特性：对于任意给定的$\varepsilon&gt;0$，存在正整数$N$，使得当$n,m&gt;N$时成立"></a>定义 如果数列$\{x_{n}\}$具有以下特性：对于任意给定的$\varepsilon&gt;0$，存在正整数$N$，使得当$n,m&gt;N$时成立</h5><script type="math/tex; mode=display">
 |x_{n}-x_{m}|<\varepsilon,</script><h5 id="则称数列-x-n-是一个基本数列"><a href="#则称数列-x-n-是一个基本数列" class="headerlink" title="则称数列$\{x_{n}\}$是一个基本数列"></a>则称数列$\{x_{n}\}$是一个基本数列</h5><h3 id="Cauchy收敛原理在函数"><a href="#Cauchy收敛原理在函数" class="headerlink" title="Cauchy收敛原理在函数"></a>Cauchy收敛原理在函数</h3><h5 id="定理-函数极限-lim-limits-n-to-infty-存在而且有限的充分必要条件是：对于任意给定的-varepsilon-gt-0-存在-X-gt-0-使得对一切-x’-x’’-gt-X-成立"><a href="#定理-函数极限-lim-limits-n-to-infty-存在而且有限的充分必要条件是：对于任意给定的-varepsilon-gt-0-存在-X-gt-0-使得对一切-x’-x’’-gt-X-成立" class="headerlink" title="定理 函数极限$\lim\limits_{n\to+\infty}$存在而且有限的充分必要条件是：对于任意给定的$\varepsilon&gt;0$,存在$X&gt;0$,使得对一切$x’,x’’&gt;X$,成立"></a>定理 函数极限$\lim\limits_{n\to+\infty}$存在而且有限的充分必要条件是：对于任意给定的$\varepsilon&gt;0$,存在$X&gt;0$,使得对一切$x’,x’’&gt;X$,成立</h5><script type="math/tex; mode=display">
 |f(x')-f(x'')|<\varepsilon</script><h3 id="Cauchy收敛原理在反常积分的应用"><a href="#Cauchy收敛原理在反常积分的应用" class="headerlink" title="Cauchy收敛原理在反常积分的应用"></a>Cauchy收敛原理在反常积分的应用</h3><h5 id="定理-反常积分-int-a-infty-f-x-dx-收敛的充分必要条件是：对任意给定的-varepsilon-gt-0-存在-A-0-ge-a-使得对任意-A-A’-ge-A-0-有"><a href="#定理-反常积分-int-a-infty-f-x-dx-收敛的充分必要条件是：对任意给定的-varepsilon-gt-0-存在-A-0-ge-a-使得对任意-A-A’-ge-A-0-有" class="headerlink" title="定理 反常积分$\int_{a}^{+\infty}f(x)dx$收敛的充分必要条件是：对任意给定的$\varepsilon&gt;0$,存在$A_{0} \ge a$,使得对任意$A,A’ \ge A_{0}$,有"></a>定理 反常积分$\int_{a}^{+\infty}f(x)dx$收敛的充分必要条件是：对任意给定的$\varepsilon&gt;0$,存在$A_{0} \ge a$,使得对任意$A,A’ \ge A_{0}$,有</h5><script type="math/tex; mode=display">
 |\int_{A}^{A'}f(x)dx|<\varepsilon</script><h5 id="推论-若反常积分-int-a-infty-f-x-dx-绝对收敛，则它一定收敛"><a href="#推论-若反常积分-int-a-infty-f-x-dx-绝对收敛，则它一定收敛" class="headerlink" title="推论 若反常积分$\int_{a}^{+\infty}f(x)dx$绝对收敛，则它一定收敛."></a>推论 若反常积分$\int_{a}^{+\infty}f(x)dx$绝对收敛，则它一定收敛.</h5><h5 id="应用-理论证明和反常积分发散"><a href="#应用-理论证明和反常积分发散" class="headerlink" title="应用 理论证明和反常积分发散"></a>应用 理论证明和反常积分发散</h5><h5 id="证明-1-必要性：易证"><a href="#证明-1-必要性：易证" class="headerlink" title="证明(1)必要性：易证"></a>证明(1)必要性：易证</h5><h5 id="充分性：波维尔凝聚定理"><a href="#充分性：波维尔凝聚定理" class="headerlink" title="充分性：波维尔凝聚定理"></a>充分性：波维尔凝聚定理</h5><h5 id="2-必要性：易证"><a href="#2-必要性：易证" class="headerlink" title="(2)必要性：易证"></a>(2)必要性：易证</h5><h5 id="充分性："><a href="#充分性：" class="headerlink" title="充分性："></a>充分性：</h5><h5 id="数列的Cauchy收敛原理和海涅归结定理"><a href="#数列的Cauchy收敛原理和海涅归结定理" class="headerlink" title="数列的Cauchy收敛原理和海涅归结定理"></a>数列的Cauchy收敛原理和海涅归结定理</h5><h5 id="假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。"><a href="#假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。" class="headerlink" title="假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。"></a>假设函数不收敛，证明到数列必须不收敛。即得数列收敛时，函数收敛。</h5><h5 id="参考书籍：《数学分析》-陈纪修"><a href="#参考书籍：《数学分析》-陈纪修" class="headerlink" title="参考书籍：《数学分析》 陈纪修"></a>参考书籍：《数学分析》 陈纪修</h5>
@@ -723,7 +807,7 @@ T=(\eta_{1},\eta_{2},...)</script><h5 id="3-令-x-Ty-就可以写出二次型的
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
