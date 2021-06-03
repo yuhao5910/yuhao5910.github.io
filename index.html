@@ -140,6 +140,296 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/02/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/yuhao5910/yuhao5910.github.io/blob/main/images/girl_0.jpg?raw=true">
+      <meta itemprop="name" content="良奈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良奈的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/02/%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E8%AF%81%E6%98%8E/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-02 23:10:27 / 修改时间：23:34:17" itemprop="dateCreated datePublished" datetime="2021-06-02T23:10:27+08:00">2021-06-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="曲线积分证明"><a href="#曲线积分证明" class="headerlink" title="曲线积分证明"></a>曲线积分证明</h3><p>$L$是一条光滑曲线，$A$和$B$是它的两个端点。</p>
+<p>设弧长为$S$,参数为$t,(a\le t \le b)$</p>
+<p>大前提：</p>
+<h5 id="合适地取两个端点中一个为弧长为零的点，使得"><a href="#合适地取两个端点中一个为弧长为零的点，使得" class="headerlink" title="合适地取两个端点中一个为弧长为零的点，使得"></a>合适地取两个端点中一个为弧长为零的点，使得</h5><script type="math/tex; mode=display">
+s=S(t)
+\\是关于t的增函数,且具有连续导数
+\\0=S(a)
+\\S=S(b)</script><p>（只要合适地取两个端点中一个为弧长为零的点就可实现）</p>
+<p>根据大前提很容易得到：</p>
+<script type="math/tex; mode=display">
+x=x(s)=x(t)
+\\y=y(s)=y(t)
+\\z=z(s)=z(t)</script><h4 id="弧微分公式"><a href="#弧微分公式" class="headerlink" title="弧微分公式"></a>弧微分公式</h4><script type="math/tex; mode=display">
+ds=S'(t)dt
+\\=\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}dt</script><h4 id="第一类曲线积分"><a href="#第一类曲线积分" class="headerlink" title="第一类曲线积分"></a>第一类曲线积分</h4><p>$\int_{L}f(x,y,z)ds$</p>
+<script type="math/tex; mode=display">
+\int_{L}f(x,y,z)ds
+\\=\int_{0}^{S}f(x(s),y(s),z(s))ds
+\\变量代换积分限要相对应
+\\=\int_{a}^{b}f(x(t),y(t),z(t))dS(t)
+\\=\int_{a}^{b}f(x(t),y(t),z(t))\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}dt</script><p>得证</p>
+<p>第一类曲线积分下限必须小于上限</p>
+<h4 id="第二类曲线积分"><a href="#第二类曲线积分" class="headerlink" title="第二类曲线积分"></a>第二类曲线积分</h4><p>$L$是一条定向光滑曲线，起点为$A$终点为$B$。在$L$上取每一点的单位切向量$\vec{\tau}=(cos(\alpha),\cos(\beta),cos(\gamma))$，使它和$L$的定向相一致。设向量值函数</p>
+<script type="math/tex; mode=display">
+\vec{F}(x,y,z)=P(x,y,z)\vec{i}+Q(x,y,z)\vec{j}+R(x,y,z)\vec{k}</script><p>$\int_{L}\vec{F}\cdot\vec{\tau}ds$</p>
+<p>称为</p>
+<p>$\vec{F}\cdot\vec{\tau}$在$L$上的第一类曲线积分</p>
+<p>也称为</p>
+<p>$\vec{F}$在定向曲线$L$上的第二类曲线积分</p>
+<script type="math/tex; mode=display">
+定向和t增长方向一致时\\cos(\alpha)=\frac{x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} \qquad (1)
+\\定向和t增长方向不一致时\\
+cos(\alpha)=\frac{-x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} \qquad (2)</script><h5 id="大前提不变"><a href="#大前提不变" class="headerlink" title="大前提不变"></a>大前提不变</h5><script type="math/tex; mode=display">
+\int_{L}\vec{F}\cdot\vec{\tau}ds=\int_{0}^{S}(P(x,y,z)cos(\alpha)+Q(x,y,z)cos(\beta)+R(x,y,z)cos(\gamma))ds
+\\变量代换积分限要相对应
+\\=\int_{a}^{b}(P(x(t),y(t),z(t))cos(\alpha)+Q(x(t),y(t),z(t))cos(\beta)+R(x(t),y(t),z(t))cos(\gamma))dS(t)</script><p>此时讨论</p>
+<p>定向和t增长方向一致,由(1)得</p>
+<script type="math/tex; mode=display">
+\int_{L}\vec{F}\cdot\vec{\tau}ds=\int_{0}^{S}(P(x,y,z)cos(\alpha)+Q(x,y,z)cos(\beta)+R(x,y,z)cos(\gamma))ds
+\\=\int_{a}^{b}(P(x(t),y(t),z(t))\frac{x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}}
+\\+Q(x(t),y(t),z(t))\frac{y'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}}
+\\+R(x(t),y(t),z(t)\frac{z'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}})\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}dt
+\\=\int_{a}^{b}(P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t),z(t))z'(t))dt</script><p>定向和t增长方向不一致，由(2)得</p>
+<script type="math/tex; mode=display">
+\int_{L}\vec{F}\cdot\vec{\tau}ds=\int_{0}^{S}(P(x,y,z)cos(\alpha)+Q(x,y,z)cos(\beta)+R(x,y,z)cos(\gamma))ds
+
+\\=\int_{a}^{b}(P(x(t),y(t),z(t))\frac{-x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}}
+\\+Q(x(t),y(t),z(t))\frac{-y'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}}
+\\+R(x(t),y(t),z(t)\frac{-z'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}})\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}dt
+\\=-\int_{a}^{b}(P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t),z(t))z'(t))dt
+\\=\int_{b}^{a}(P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t),z(t))z'(t))dt</script><p>得证</p>
+<script type="math/tex; mode=display">
+t: a\rightarrow b
+\\则第二类曲线积分为
+\\=\int_{a}^{b}(P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t),z(t))z'(t))dt
+\\t: b\rightarrow a
+\\则第二类曲线积分为
+\\=\int_{b}^{a}(P(x(t),y(t),z(t))x'(t)+Q(x(t),y(t),z(t))y'(t)+R(x(t),y(t),z(t))z'(t))dt</script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/06/01/%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E6%96%B9%E5%90%91%E6%80%A7%E5%92%8C%E7%A7%AF%E5%88%86%E4%B8%8A%E4%B8%8B%E9%99%90%E7%9A%84%E8%81%94%E7%B3%BB/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/yuhao5910/yuhao5910.github.io/blob/main/images/girl_0.jpg?raw=true">
+      <meta itemprop="name" content="良奈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良奈的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/06/01/%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%9B%B2%E7%BA%BF%E7%A7%AF%E5%88%86%E6%96%B9%E5%90%91%E6%80%A7%E5%92%8C%E7%A7%AF%E5%88%86%E4%B8%8A%E4%B8%8B%E9%99%90%E7%9A%84%E8%81%94%E7%B3%BB/" class="post-title-link" itemprop="url">未命名</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-01 18:03:08 / 修改时间：23:00:57" itemprop="dateCreated datePublished" datetime="2021-06-01T18:03:08+08:00">2021-06-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="第二类曲线积分方向性和积分上下限的联系"><a href="#第二类曲线积分方向性和积分上下限的联系" class="headerlink" title="第二类曲线积分方向性和积分上下限的联系"></a>第二类曲线积分方向性和积分上下限的联系</h3><p>$L$是一条定向光滑曲线，起点为$A$终点为$B$。在$L$上取每一点的单位切向量$\vec{\tau}=(cos(\alpha),\cos(\beta),cos(\gamma))$，使它和$L$的定向相一致。设向量值函数</p>
+<script type="math/tex; mode=display">
+\vec{F}(x,y,z)=P(x,y,z)\vec{i}+Q(x,y,z)\vec{j}+R(x,y,z)\vec{k}</script><p>$\int_{L}\vec{F}\cdot\vec{\tau}ds$</p>
+<p>称为</p>
+<p>$\vec{F}\cdot\vec{\tau}$在$L$上的第一类曲线积分</p>
+<p>也称为</p>
+<p>$\vec{F}$在定向曲线$L$上的第二类曲线积分</p>
+<script type="math/tex; mode=display">
+dx=cos(\alpha)ds \qquad (*)
+\\dy=cos(\beta)ds
+\\dz=cos(\gamma)ds</script><p>设参数$t$ $(a\le t \le b)$</p>
+<script type="math/tex; mode=display">
+x=x(t)
+\\y=y(t)
+\\z=z(t)
+\\s=s(t)</script><script type="math/tex; mode=display">
+定向和t增长方向一致时\\cos(\alpha)=\frac{x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} \qquad (1)
+\\定向和t增长方向不一致时\\
+cos(\alpha)=\frac{-x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} \qquad (2)</script><p>由$*$和$（1）$得</p>
+<script type="math/tex; mode=display">
+dx(t)=cos(\alpha)ds
+\\x'(t)dt=\frac{x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} ds
+\\dt=\frac{1}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} ds</script><p>$t$是关于$s$的增函数，所以$t$的上限对应$s$的上限，$t$的下限对应$s$的下限</p>
+<script type="math/tex; mode=display">
+\int_{L}\vec{F}\cdot\vec{\tau}ds=\int_{0}^{S}(P(x,y,z)cos(\alpha)+Q(x,y,z)cos(\beta)+R(x,y,z)cos(\gamma))ds
+\\=\int_{a}^{b}f(t)dt</script><p>由$*$和$（2）$得</p>
+<script type="math/tex; mode=display">
+dx(t)=cos(\alpha)ds
+\\x'(t)dt=\frac{-x'(t)}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} ds
+\\dt=\frac{-1}{\sqrt{x'(t)^2+y'(t)^2+z'(t)^2}} ds</script><p>$t$是关于$s$的减函数，所以$t$的上限对应$s$的下限，$t$的下限对应$s$的上限</p>
+<script type="math/tex; mode=display">
+\int_{L}\vec{F}\cdot\vec{\tau}ds=\int_{0}^{S}(P(x,y,z)cos(\alpha)+Q(x,y,z)cos(\beta)+R(x,y,z)cos(\gamma))ds
+\\=\int_{b}^{a}f(t)dt</script><p>得证：</p>
+<script type="math/tex; mode=display">
+定向和t增长方向一致时\\\int_{L}\vec{F}\cdot\vec{\tau}ds=\int_{a}^{b}f(t)dt \qquad (1)
+\\定向和t增长方向不一致时\\
+\int_{L}\vec{F}\cdot\vec{\tau}ds=\int_{b}^{a}f(t)dt \qquad (2)</script>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/08/Python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://github.com/yuhao5910/yuhao5910.github.io/blob/main/images/girl_0.jpg?raw=true">
+      <meta itemprop="name" content="良奈">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="良奈的博客">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/08/Python%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95/" class="post-title-link" itemprop="url">Python字符串方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-08 13:33:15 / 修改时间：13:35:26" itemprop="dateCreated datePublished" datetime="2021-04-08T13:33:15+08:00">2021-04-08</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Python字符串方法"><a href="#Python字符串方法" class="headerlink" title="Python字符串方法"></a>Python字符串方法</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>a.endswith(b)</th>
+<th>检查字符串末尾字符是否为b，返回布尔值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2021/04/07/Python%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%BF%AE%E6%94%B9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -335,7 +625,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-04-07 18:17:47" itemprop="dateModified" datetime="2021-04-07T18:17:47+08:00">2021-04-07</time>
+                <time title="修改时间：2021-04-08 13:41:52" itemprop="dateModified" datetime="2021-04-08T13:41:52+08:00">2021-04-08</time>
               </span>
 
           
@@ -411,6 +701,21 @@
 <p>结果</p>
 <blockquote>
 <p>helloNice to meet you<br>helloNice to meet you</p>
+</blockquote>
+<p>format</p>
+<blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;nice to meet you&quot;</span></span><br><span class="line">t=<span class="string">&quot;&#123;name&#125;,&#123;hi&#125;&quot;</span></span><br><span class="line">t.<span class="built_in">format</span>(name=<span class="string">&quot;alice&quot;</span>,hi=a)</span><br><span class="line"><span class="built_in">print</span>(t)</span><br><span class="line"><span class="built_in">print</span>(t.<span class="built_in">format</span>(name=<span class="string">&quot;alice&quot;</span>,hi=a))</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>{name},{hi}<br>alice,nice to meet you</p>
+</blockquote>
+<h3 id="基于字典的字符串格式化方法"><a href="#基于字典的字符串格式化方法" class="headerlink" title="基于字典的字符串格式化方法"></a>基于字典的字符串格式化方法</h3><h5 id="“hello-a-s”-“a”-b-用b来替换a的位置"><a href="#“hello-a-s”-“a”-b-用b来替换a的位置" class="headerlink" title="“hello %(a)s”%{“a”:b} 用b来替换a的位置"></a>“hello %(a)s”%{“a”:b} 用b来替换a的位置</h5><blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=<span class="string">&quot;nice to meet you&quot;</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;%(a)r Alice&quot;</span>%&#123;<span class="string">&quot;a&quot;</span>:a&#125;)</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>结果</p>
+<blockquote>
+<p>‘nice to meet you’ Alice</p>
 </blockquote>
 
       
@@ -762,72 +1067,11 @@ T=(\eta_{1},\eta_{2},...)</script><h5 id="3-令-x-Ty-就可以写出二次型的
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/27/birthday/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://github.com/yuhao5910/yuhao5910.github.io/blob/main/images/girl_0.jpg?raw=true">
-      <meta itemprop="name" content="良奈">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="良奈的博客">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2021/03/27/birthday/" class="post-title-link" itemprop="url">birthday</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2021-03-27 15:09:00" itemprop="dateCreated datePublished" datetime="2021-03-27T15:09:00+08:00">2021-03-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-03-28 12:45:22" itemprop="dateModified" datetime="2021-03-28T12:45:22+08:00">2021-03-28</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h3 id="公主的生日"><a href="#公主的生日" class="headerlink" title="公主的生日"></a>公主的生日</h3><h5 id="公主是国王足下的唯一子嗣，她的眼睛像宝石一样熠耀，柔情似水。她宛如维纳斯一样美丽，给人鲜花拥簇的感觉。又带有一朵花便可以代表所有的花意味。公主是如此美丽，以至于在她生日那天，皇城里已经挤得让人没有站脚的地方。"><a href="#公主是国王足下的唯一子嗣，她的眼睛像宝石一样熠耀，柔情似水。她宛如维纳斯一样美丽，给人鲜花拥簇的感觉。又带有一朵花便可以代表所有的花意味。公主是如此美丽，以至于在她生日那天，皇城里已经挤得让人没有站脚的地方。" class="headerlink" title="公主是国王足下的唯一子嗣，她的眼睛像宝石一样熠耀，柔情似水。她宛如维纳斯一样美丽，给人鲜花拥簇的感觉。又带有一朵花便可以代表所有的花意味。公主是如此美丽，以至于在她生日那天，皇城里已经挤得让人没有站脚的地方。"></a>公主是国王足下的唯一子嗣，她的眼睛像宝石一样熠耀，柔情似水。她宛如维纳斯一样美丽，给人鲜花拥簇的感觉。又带有一朵花便可以代表所有的花意味。公主是如此美丽，以至于在她生日那天，皇城里已经挤得让人没有站脚的地方。</h5><h5 id="在这一天，国王大宴四方，今天就是女儿成人之日。成人代表着女儿的婚事很快要确定下来了。谁会成为这个繁华王国的继承人，这个国王并不知道。知道的只有公主。"><a href="#在这一天，国王大宴四方，今天就是女儿成人之日。成人代表着女儿的婚事很快要确定下来了。谁会成为这个繁华王国的继承人，这个国王并不知道。知道的只有公主。" class="headerlink" title="在这一天，国王大宴四方，今天就是女儿成人之日。成人代表着女儿的婚事很快要确定下来了。谁会成为这个繁华王国的继承人，这个国王并不知道。知道的只有公主。"></a>在这一天，国王大宴四方，今天就是女儿成人之日。成人代表着女儿的婚事很快要确定下来了。谁会成为这个繁华王国的继承人，这个国王并不知道。知道的只有公主。</h5><h5 id="宴席依湖而设，国王在高塔上宣布：“我的女儿无与伦比，太阳见她也会惭愧！我的人民，看啊，天地的精华造就了我的女儿！”宴席到了一半，月亮被乌云遮盖，远处有庞大黑影在向这边移动。人们见了，只求别在这时候下雨，来什么都行。"><a href="#宴席依湖而设，国王在高塔上宣布：“我的女儿无与伦比，太阳见她也会惭愧！我的人民，看啊，天地的精华造就了我的女儿！”宴席到了一半，月亮被乌云遮盖，远处有庞大黑影在向这边移动。人们见了，只求别在这时候下雨，来什么都行。" class="headerlink" title="宴席依湖而设，国王在高塔上宣布：“我的女儿无与伦比，太阳见她也会惭愧！我的人民，看啊，天地的精华造就了我的女儿！”宴席到了一半，月亮被乌云遮盖，远处有庞大黑影在向这边移动。人们见了，只求别在这时候下雨，来什么都行。"></a>宴席依湖而设，国王在高塔上宣布：“我的女儿无与伦比，太阳见她也会惭愧！我的人民，看啊，天地的精华造就了我的女儿！”宴席到了一半，月亮被乌云遮盖，远处有庞大黑影在向这边移动。人们见了，只求别在这时候下雨，来什么都行。</h5><h5 id="公主在这个时候走下高塔，她说：“人民，我祝愿你们都能得到幸福。我深爱着你们，所以今夜请尽情狂欢”人们为公主的这一言行震撼，因为公主是遥不可及的，所以当公主就在身边时，她美得不真实。人们好像陶醉在梦里。月光照在公主的身上，让她的一举一动是如此的清晰，人们好像感受到公主轻微的呼吸。欣赏公主的美丽，就像看青石一般的海一样，你看到她的柔情，眼里流露的情语。却无法看透她内心的波澜，她会为谁心动？"><a href="#公主在这个时候走下高塔，她说：“人民，我祝愿你们都能得到幸福。我深爱着你们，所以今夜请尽情狂欢”人们为公主的这一言行震撼，因为公主是遥不可及的，所以当公主就在身边时，她美得不真实。人们好像陶醉在梦里。月光照在公主的身上，让她的一举一动是如此的清晰，人们好像感受到公主轻微的呼吸。欣赏公主的美丽，就像看青石一般的海一样，你看到她的柔情，眼里流露的情语。却无法看透她内心的波澜，她会为谁心动？" class="headerlink" title="公主在这个时候走下高塔，她说：“人民，我祝愿你们都能得到幸福。我深爱着你们，所以今夜请尽情狂欢”人们为公主的这一言行震撼，因为公主是遥不可及的，所以当公主就在身边时，她美得不真实。人们好像陶醉在梦里。月光照在公主的身上，让她的一举一动是如此的清晰，人们好像感受到公主轻微的呼吸。欣赏公主的美丽，就像看青石一般的海一样，你看到她的柔情，眼里流露的情语。却无法看透她内心的波澜，她会为谁心动？"></a>公主在这个时候走下高塔，她说：“人民，我祝愿你们都能得到幸福。我深爱着你们，所以今夜请尽情狂欢”人们为公主的这一言行震撼，因为公主是遥不可及的，所以当公主就在身边时，她美得不真实。人们好像陶醉在梦里。月光照在公主的身上，让她的一举一动是如此的清晰，人们好像感受到公主轻微的呼吸。欣赏公主的美丽，就像看青石一般的海一样，你看到她的柔情，眼里流露的情语。却无法看透她内心的波澜，她会为谁心动？</h5>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -893,7 +1137,7 @@ T=(\eta_{1},\eta_{2},...)</script><h5 id="3-令-x-Ty-就可以写出二次型的
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
